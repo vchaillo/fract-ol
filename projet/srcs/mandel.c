@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/25 15:49:07 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/25 22:31:46 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/02/25 22:36:29 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	draw_mandel(t_env *e)
 		{
 			p.r = 1.5 * (x - WIN_W / 2) / (0.5 * p.z * WIN_W);
 			p.i = (y - WIN_W / 2) / (0.5 * p.z * WIN_W);
-			color = (e->color * (mandel_color(&p) / 255));
+			color = (e->color * (mandel_color(&p) * 1000));
 			fill_pixel(e, color, x, y);
 			y++;
 		}
@@ -63,7 +63,7 @@ int		mandel_color(t_complx *p)
 
 void	init_mandel(t_complx *p, t_env *e)
 {
-	e->color = 0x00FF00;
+	e->color = 0x0000FF;
 	p->iter = 50;
 	p->z = 1;
 }
