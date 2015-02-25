@@ -6,7 +6,7 @@
 #    By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/27 19:25:58 by vchaillo          #+#    #+#              #
-#    Updated: 2015/02/18 18:43:23 by valentin         ###   ########.fr        #
+#    Updated: 2015/02/25 17:51:41 by vchaillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS_NAME = main.c\
 			error_msg.c\
 			menus.c\
 			strings.c\
+			mandel.c\
 
 SRCS_PATH = ./srcs/
 

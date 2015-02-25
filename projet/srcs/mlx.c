@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/15 19:31:37 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/18 18:45:27 by valentin         ###   ########.fr       */
+/*   Updated: 2015/02/25 20:21:26 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,21 @@ int		mouse_hook(int button, int x, int y, t_env *e)
 	return (0);
 }
 
-void	start_mlx(void)
+void	start_mlx(t_env *e)
 {
-	t_env	e;
 
-	if (!(e.mlx = mlx_init()))
+	if (!(e->mlx = mlx_init()))
 		exit (0);
-	e.win = mlx_new_window(e.mlx, WIN_W, WIN_H, "fdf");
-	e.img = mlx_new_image(e.mlx, WIN_W, IMG_H);
-	e.img_head = mlx_new_image(e.mlx, WIN_W, HEAD_H);
-	e.data = mlx_get_data_addr(e.img, &(e.bpp), &(e.size), &(e.endian));
-	e.data_head = mlx_get_data_addr(e.img_head, &(e.bpp), &(e.size_head), &(e.endian));
-	draw_header(&e);
-	mlx_expose_hook(e.win, expose_hook, &e);
-	mlx_mouse_hook(e.win, mouse_hook, &e);
-	mlx_hook(e.win, 3, 3, key_hook, &e);
-	mlx_loop(e.mlx);
+	e->win = mlx_new_window(e->mlx, WIN_W, WIN_H, "fractol");
+	e->img = mlx_new_image(e->mlx, WIN_W, IMG_H);
+	e->img_head = mlx_new_image(e->mlx, WIN_W, HEAD_H);
+	e->data = mlx_get_data_addr(e->img, &(e->bpp), &(e->size), &(e->endian));
+	e->data_head = mlx_get_data_addr(e->img_head, &(e->bpp), &(e->size_head),
+		&(e->endian));
+	draw_header(e);
+	draw_all(e);
+	mlx_expose_hook(e->win, expose_hook, e);
+	mlx_mouse_hook(e->win, mouse_hook, e);
+	mlx_hook(e->win, 3, 3, key_hook, e);
+	mlx_loop(e->mlx);
 }
