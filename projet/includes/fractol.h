@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/15 19:24:48 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/25 22:31:53 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/02/26 13:57:20 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct		s_complx
 {
 	double			i;
 	double			r;
-	int				z;
+	float			zoom;
 	int				iter;
 }					t_complx;
 
