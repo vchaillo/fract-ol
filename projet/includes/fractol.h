@@ -64,7 +64,6 @@ typedef struct		s_complx
 {
 	double		i;
 	double		r;
-	int		iter;
 }			t_complx;
 
 typedef struct		s_env
@@ -81,6 +80,7 @@ typedef struct		s_env
 	int		bpp;
 	int		menu;
 	int		arg;
+	int		iter;
 	int		color;
 	float		zoom;
 	int		move;
@@ -96,6 +96,7 @@ void			draw_menu(t_env *e);
 void			draw_header(t_env *e);
 void			draw_all(t_env *e);
 void			draw_mandel(t_env *e);
+void			init_all(t_env *e);
 void			fill_pixel(t_env *e, int color, int x, int y);
 void			fill_head_pixel(t_env *e, int color, int x, int y);
 void			erase_image(t_env *e);
@@ -103,5 +104,8 @@ void			put_head_strings(t_env *e);
 void			put_menu_strings(t_env *e);
 void			put_strings_1(t_env *e);
 void			put_strings_2(t_env *e);
+void			move_key_hook(t_env *e, int keycode);
+void			zoom_key_hook(t_env *e, int keycode);
+void			color_key_hook(t_env *e, int keycode);
 
 #endif

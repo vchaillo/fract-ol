@@ -12,23 +12,23 @@
 
 #include "fractol.h"
 
-static void	init_mandel(t_complx *p, t_env *e)
+void	init_all(t_env *e)
 {
 	e->color = 0x0000FF;
-	p->iter = 50;
+	e->iter = 50;
 	e->zoom = 0.5;
 }
 
-int		mandel_color(t_complx *p)
+int		mandel_color(t_complx *p, t_env *e)
 {
 	t_complx	old;
 	t_complx	new;
-	int			i;
+	int		i;
 
 	i = 0;
 	new.r = 0;
 	new.i = 0;
-	while (i < p->iter)
+	while (i < e->iter)
 	{
 		old.r = new.r;
 		old.i = new.i;
@@ -38,7 +38,7 @@ int		mandel_color(t_complx *p)
 			break;
 		i++;
 	}
-	if (i == p->iter)
+	if (i == e->iter)
 		return (0);
 	else
 		return (i);
@@ -51,7 +51,6 @@ void	draw_mandel(t_env *e)
 	int		x;
 	int		y;
 
-	init_mandel(&p, e);
 	x = 0;
 	while (x < WIN_W)
 	{
@@ -60,7 +59,7 @@ void	draw_mandel(t_env *e)
 		{
 			p.r = 1 * (x - WIN_W / 2) / (0.5 * e->zoom * WIN_W);
 			p.i = (y - WIN_W / 2) / (0.5 * e->zoom * WIN_W);
-			color = (e->color * (mandel_color(&p) * 1000));
+			color = (e->color * (mandel_color(&p, e) * 1000));
 			fill_pixel(e, color, x, y);
 			y++;
 		}

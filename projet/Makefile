@@ -18,6 +18,7 @@ SRCS_NAME = main.c\
 			error_msg.c\
 			menus.c\
 			strings.c\
+			key_hook.c\
 			mandel.c\
 
 SRCS_PATH = ./srcs/

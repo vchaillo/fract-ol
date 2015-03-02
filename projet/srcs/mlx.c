@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-int		expose_hook(t_env *e)
+int	expose_hook(t_env *e)
 {
 	mlx_put_image_to_window(e->mlx, e->win, e->img, 0, HEAD_H);
 	mlx_put_image_to_window(e->mlx, e->win, e->img_head, 0, 0);
@@ -21,17 +21,20 @@ int		expose_hook(t_env *e)
 	return (0);
 }
 
-int		key_hook(int keycode, t_env *e)
+int	key_hook(int keycode, t_env *e)
 {
 	if (keycode == 65307)
 		exit (0);
+	move_key_hook(e, keycode);
+	zoom_key_hook(e, keycode);
+	color_key_hook(e, keycode);
 	erase_image(e);
 	ft_putnbr(keycode);
 	ft_putchar('\n');
 	return (0);
 }
 
-int		mouse_hook(int button, int x, int y, t_env *e)
+int	mouse_hook(int button, int x, int y, t_env *e)
 {
 	if (button == 1 && y < CASE_H && x > 0 && x < CASE_W)
 	{
@@ -56,6 +59,7 @@ void	start_mlx(t_env *e)
 	e->data_head = mlx_get_data_addr(e->img_head, &(e->bpp), &(e->size_head),
 		&(e->endian));
 	draw_header(e);
+	init_all(e);
 	draw_all(e);
 	mlx_expose_hook(e->win, expose_hook, e);
 	mlx_mouse_hook(e->win, mouse_hook, e);
