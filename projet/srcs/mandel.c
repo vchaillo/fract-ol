@@ -17,6 +17,8 @@ void	init_all(t_env *e)
 	e->color = 0x0000FF;
 	e->iter = 50;
 	e->zoom = 0.5;
+	e->move_ud = 0;
+	e->move_lr = 0;
 }
 
 int		mandel_color(t_complx *p, t_env *e)
@@ -57,8 +59,8 @@ void	draw_mandel(t_env *e)
 		y = 0;
 		while (y < WIN_H)
 		{
-			p.r = 1 * (x - WIN_W / 2) / (0.5 * e->zoom * WIN_W);
-			p.i = (y - WIN_W / 2) / (0.5 * e->zoom * WIN_W);
+			p.r = 1 * (x - WIN_W / 2) / (0.5 * e->zoom * WIN_W) + e->move_lr;
+			p.i = (y - WIN_W / 2) / (0.5 * e->zoom * WIN_W) + e->move_ud;
 			color = (e->color * (mandel_color(&p, e) * 1000));
 			fill_pixel(e, color, x, y);
 			y++;

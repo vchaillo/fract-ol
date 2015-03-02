@@ -46,16 +46,16 @@ void	put_menu_strings(t_env *e)
 
 void	put_strings_1(t_env *e)
 {
-	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 3 - 10), ORANGE, \
+	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 3), ORANGE, \
 			"Zoom + : num+");
-	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 4 - 10), ORANGE, \
+	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 4), ORANGE, \
 			"Zoom - : num-");
-	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 5 - 10), ORANGE, \
+	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 5), ORANGE, \
 			"color_set_1 : 1");
-	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 6 - 10), ORANGE, \
+	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 6), ORANGE, \
 			"color_set_2 : 2");
-	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 7 - 10), ORANGE, \
+	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 7), ORANGE, \
 			"color_set_3 : 3");
-	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 8 - 10), ORANGE, \
+	mlx_string_put(e->mlx, e->win, (TEXT_W / 2), (TEXT_H * 8), ORANGE, \
 			"color_set_4 : 4");
 }

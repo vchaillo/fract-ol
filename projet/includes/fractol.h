@@ -28,7 +28,7 @@
 
 # define CASE_H (WIN_H / 20)
 # define CASE_W (WIN_W / 5)
-# define TEXT_H (CASE_H / 8) * 6
+# define TEXT_H (CASE_H / 8) * 7
 # define TEXT_W (CASE_W / 10) * 2
 
 # define STD 0
@@ -83,7 +83,8 @@ typedef struct		s_env
 	int		iter;
 	int		color;
 	float		zoom;
-	int		move;
+	double		move_ud;
+	double		move_lr;
 }			t_env;
 
 void			start_mlx(t_env *e);
