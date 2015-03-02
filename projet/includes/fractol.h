@@ -22,7 +22,7 @@
 # include "../libft/includes/libft.h"
 
 # define WIN_W 600
-# define WIN_H 700
+# define WIN_H 635
 # define HEAD_H (WIN_H / 20)
 # define IMG_H (WIN_H - HEAD_H)
 
@@ -62,47 +62,46 @@
 
 typedef struct		s_complx
 {
-	double			i;
-	double			r;
-	float			zoom;
-	int				iter;
-}					t_complx;
+	double		i;
+	double		r;
+	int		iter;
+}			t_complx;
 
 typedef struct		s_env
 {
-	void			*mlx;
-	void			*win;
-	void			*img;
-	void			*img_head;
-	char			*data;
-	char			*data_head;
-	int				size;
-	int				size_head;
-	int				endian;
-	int				bpp;
-	int				menu;
-	int				arg;
-	int				color;
-}					t_env;
+	void		*mlx;
+	void		*win;
+	void		*img;
+	void		*img_head;
+	char		*data;
+	char		*data_head;
+	int		size;
+	int		size_head;
+	int		endian;
+	int		bpp;
+	int		menu;
+	int		arg;
+	int		color;
+	float		zoom;
+	int		move;
+}			t_env;
 
-void				start_mlx(t_env *e);
-int					expose_hook(t_env *e);
-int					key_hook(int keycode, t_env *e);
-int					mouse_hook(int button, int x, int y, t_env *e);
-void				open_error(t_env *e);
-void				malloc_error(void);
-void				draw_menu(t_env *e);
-void				draw_header(t_env *e);
-void				draw_all(t_env *e);
-void				draw_mandel(t_env *e);
-void				fill_pixel(t_env *e, int color, int x, int y);
-void				fill_head_pixel(t_env *e, int color, int x, int y);
-void				erase_image(t_env *e);
-void				put_head_strings(t_env *e);
-void				put_menu_strings(t_env *e);
-void				put_strings_1(t_env *e);
-void				put_strings_2(t_env *e);
-void				init_mandel(t_complx *p, t_env *e);
-int					mandel_color(t_complx *p);
+void			start_mlx(t_env *e);
+int			expose_hook(t_env *e);
+int			key_hook(int keycode, t_env *e);
+int			mouse_hook(int button, int x, int y, t_env *e);
+void			open_error(t_env *e);
+void			malloc_error(void);
+void			draw_menu(t_env *e);
+void			draw_header(t_env *e);
+void			draw_all(t_env *e);
+void			draw_mandel(t_env *e);
+void			fill_pixel(t_env *e, int color, int x, int y);
+void			fill_head_pixel(t_env *e, int color, int x, int y);
+void			erase_image(t_env *e);
+void			put_head_strings(t_env *e);
+void			put_menu_strings(t_env *e);
+void			put_strings_1(t_env *e);
+void			put_strings_2(t_env *e);
 
 #endif

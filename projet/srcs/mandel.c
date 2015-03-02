@@ -12,28 +12,11 @@
 
 #include "fractol.h"
 
-void	draw_mandel(t_env *e)
+static void	init_mandel(t_complx *p, t_env *e)
 {
-	t_complx	p;
-	int			color;
-	int			x;
-	int			y;
-
-	init_mandel(&p, e);
-	x = 0;
-	while (x < WIN_W)
-	{
-		y = 0;
-		while (y < WIN_H)
-		{
-			p.r = 1 * (x - WIN_W / 2) / (0.5 * p.zoom * WIN_W);
-			p.i = (y - WIN_W / 2) / (0.5 * p.zoom * WIN_W);
-			color = (e->color * (mandel_color(&p) * 1000));
-			fill_pixel(e, color, x, y);
-			y++;
-		}
-		x++;
-	}
+	e->color = 0x0000FF;
+	p->iter = 50;
+	e->zoom = 0.5;
 }
 
 int		mandel_color(t_complx *p)
@@ -61,9 +44,26 @@ int		mandel_color(t_complx *p)
 		return (i);
 }
 
-void	init_mandel(t_complx *p, t_env *e)
+void	draw_mandel(t_env *e)
 {
-	e->color = 0x0000FF;
-	p->iter = 50;
-	p->zoom = 0.5;
+	t_complx	p;
+	int		color;
+	int		x;
+	int		y;
+
+	init_mandel(&p, e);
+	x = 0;
+	while (x < WIN_W)
+	{
+		y = 0;
+		while (y < WIN_H)
+		{
+			p.r = 1 * (x - WIN_W / 2) / (0.5 * e->zoom * WIN_W);
+			p.i = (y - WIN_W / 2) / (0.5 * e->zoom * WIN_W);
+			color = (e->color * (mandel_color(&p) * 1000));
+			fill_pixel(e, color, x, y);
+			y++;
+		}
+		x++;
+	}
 }
