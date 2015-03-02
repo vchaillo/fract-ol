@@ -27,8 +27,8 @@
 # define IMG_H (WIN_H - HEAD_H)
 
 # define CASE_H (WIN_H / 20)
-# define CASE_W (WIN_W / 10)
-# define TEXT_H (CASE_H / 8) * 5
+# define CASE_W (WIN_W / 5)
+# define TEXT_H (CASE_H / 8) * 6
 # define TEXT_W (CASE_W / 10) * 2
 
 # define STD 0

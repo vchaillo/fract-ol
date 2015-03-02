@@ -17,16 +17,12 @@ void	draw_menu(t_env *e)
 	int		x;
 	int		y;
 
-	y = 1;
-	while (y < CASE_H * 4)
+	y = 0;
+	while (++y < CASE_H * 5)
 	{
-		x = 1;
-		while (x < CASE_W)
-		{
+		x = 0;
+		while (++x < CASE_W)
 			fill_pixel(e, DARK_GREY, x, y);
-			x++;
-		}
-		y++;
 	}
 }
 
