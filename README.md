@@ -1,11 +1,13 @@
-fract'ol
+fract_ol
 =========
 
 Todo list:
 ==========
 - Mandelbrot
-- Julia
-- Choisir troisieme fractale
+- Julia avec mouse
+- Kosh
+- Deplacements
+- Zoom
 
 A faire avant rendu:
 ====================
