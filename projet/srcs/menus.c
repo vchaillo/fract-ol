@@ -26,6 +26,20 @@ void	draw_menu(t_env *e)
 	}
 }
 
+void	draw_color_menu(t_env *e)
+{
+	int		x;
+	int		y;
+
+	y = 0;
+	while (++y < CASE_H * 5)
+	{
+		x = CASE_W;
+		while (++x < CASE_W * 2)
+			fill_pixel(e, DARK_GREY, x, y);
+	}
+}
+
 void	draw_header(t_env *e)
 {
 	int		x;

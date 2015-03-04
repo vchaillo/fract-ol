@@ -14,7 +14,7 @@
 
 void	init_all(t_env *e)
 {
-	e->color = 0x0000FF;
+	e->color = YELLOW;
 	e->iter = 50;
 	e->zoom = 0.5;
 	e->move_ud = 0;
@@ -57,7 +57,7 @@ void	draw_mandel(t_env *e)
 	while (x < WIN_W)
 	{
 		y = 0;
-		while (y < WIN_H)
+		while (y < IMG_H)
 		{
 			p.r = 1 * (x - WIN_W / 2) / (0.5 * e->zoom * WIN_W) + e->move_lr;
 			p.i = (y - WIN_W / 2) / (0.5 * e->zoom * WIN_W) + e->move_ud;

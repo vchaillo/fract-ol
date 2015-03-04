@@ -14,6 +14,7 @@
 
 void	draw_all(t_env *e)
 {
+	(void)e;
 	if (e->arg == MANDEL)
 		draw_mandel(e);
 	if (e->arg == JULIA)
@@ -30,6 +31,8 @@ void	erase_image(t_env *e)
 	draw_all(e);
 	if (e->menu == ON)
 		draw_menu(e);
+	if (e->color_menu == ON)
+		draw_color_menu(e);
 	mlx_put_image_to_window(e->mlx, e->win, e->img, 0, HEAD_H);
 	put_menu_strings(e);
 }

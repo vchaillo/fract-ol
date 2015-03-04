@@ -18,8 +18,8 @@ SRCS_NAME = main.c\
 			error_msg.c\
 			menus.c\
 			strings.c\
-			key_hook.c\
 			mandel.c\
+			key_hook.c\
 
 SRCS_PATH = ./srcs/
 
@@ -33,20 +33,24 @@ OBJS = $(addprefix $(OBJS_PATH),$(OBJS_NAME))
 
 FLAGS = -Wall -Wextra -Werror
 
-LIBFT = -Llibft -lft
-
 LIBFT_H = -I libft/includes/
 
-HEADERS = -I includes/
+LIBFT = -Llibft -lft
 
-LIB_MLX = -L/usr/X11/lib -lmlx -lXext -lX11
+MLX_H = -I minilibx/
+
+LIB_MLX = -Lminilibx/ -lmlx -framework OpenGL -framework AppKit
+
+HEADERS = -I includes/
 
 all: $(NAME)
 
 $(NAME):
 	@make -C libft/ fclean
 	@make -C libft/
-	@gcc -g $(FLAGS) $(LIBFT_H) $(HEADERS) -c $(SRCS)
+	@make -C minilibx/ clean
+	@make -C minilibx/
+	@gcc -g $(FLAGS) $(LIBFT_H) $(MLX_H) $(HEADERS) -c $(SRCS)
 	@mkdir $(OBJS_PATH)
 	@mv $(OBJS_NAME) $(OBJS_PATH)
 	@gcc -o $(NAME) $(OBJS) $(LIBFT) $(LIB_MLX)

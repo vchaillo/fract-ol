@@ -28,13 +28,13 @@
 
 # define CASE_H (WIN_H / 20)
 # define CASE_W (WIN_W / 5)
-# define TEXT_H (CASE_H / 8) * 7
-# define TEXT_W (CASE_W / 10) * 2
+# define TEXT_H (CASE_H / 4)
+# define TEXT_W (CASE_W / 5)
 
 # define STD 0
-# define BLUE_MODE 1
-# define RED_MODE 2
-# define GREEN_MODE 3
+# define RED_MODE 1
+# define GREEN_MODE 2
+# define BLUE_MODE 3
 
 # define MANDEL 1
 # define JULIA 2
@@ -79,6 +79,7 @@ typedef struct		s_env
 	int		endian;
 	int		bpp;
 	int		menu;
+	int		color_menu;
 	int		arg;
 	int		iter;
 	int		color;
@@ -94,6 +95,7 @@ int			mouse_hook(int button, int x, int y, t_env *e);
 void			open_error(t_env *e);
 void			malloc_error(void);
 void			draw_menu(t_env *e);
+void			draw_color_menu(t_env *e);
 void			draw_header(t_env *e);
 void			draw_all(t_env *e);
 void			draw_mandel(t_env *e);
@@ -103,8 +105,6 @@ void			fill_head_pixel(t_env *e, int color, int x, int y);
 void			erase_image(t_env *e);
 void			put_head_strings(t_env *e);
 void			put_menu_strings(t_env *e);
-void			put_strings_1(t_env *e);
-void			put_strings_2(t_env *e);
 void			move_key_hook(t_env *e, int keycode);
 void			zoom_key_hook(t_env *e, int keycode);
 void			color_key_hook(t_env *e, int keycode);
