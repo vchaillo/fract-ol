@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 02:20:44 by valentin          #+#    #+#             */
-/*   Updated: 2015/03/06 19:13:35 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/06 19:30:53 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	draw_all(t_env *e)
 	if (e->arg == MANDEL)
 		draw_mandel(e);
 	if (e->arg == JULIA)
-		draw_mandel(e);
+		draw_julia(e);
 	if (e->arg == OTHER)
 		draw_mandel(e);
 }

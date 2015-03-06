@@ -6,7 +6,7 @@
 #    By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/27 19:25:58 by vchaillo          #+#    #+#              #
-#    Updated: 2015/02/25 17:51:41 by vchaillo         ###   ########.fr        #
+#    Updated: 2015/03/06 20:19:31 by vchaillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS_NAME = main.c\
 			menus.c\
 			strings.c\
 			mandel.c\
+			julia.c\
 			key_hook.c\
 
 SRCS_PATH = ./srcs/

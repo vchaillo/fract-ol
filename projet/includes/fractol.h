@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/15 19:24:48 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/06 19:27:43 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/06 20:18:32 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,12 @@ typedef struct	s_complx
 	double		r;
 }				t_complx;
 
+typedef struct	s_julia
+{
+	double		rc;
+	double		ic;
+}				t_julia;
+
 typedef struct	s_env
 {
 	void		*mlx;
@@ -86,6 +92,7 @@ typedef struct	s_env
 	float		zoom;
 	double		move_ud;
 	double		move_lr;
+	t_julia		ju;
 }				t_env;
 
 void			start_mlx(t_env *e);
@@ -99,6 +106,7 @@ void			draw_color_menu(t_env *e);
 void			draw_header(t_env *e);
 void			draw_all(t_env *e);
 void			draw_mandel(t_env *e);
+void			draw_julia(t_env *e);
 void			init_all(t_env *e);
 void			fill_pixel(t_env *e, int color, int x, int y);
 void			fill_head_pixel(t_env *e, int color, int x, int y);
