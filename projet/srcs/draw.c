@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 02:20:44 by valentin          #+#    #+#             */
-/*   Updated: 2015/02/25 20:19:59 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/06 19:13:35 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	erase_image(t_env *e)
 		draw_color_menu(e);
 	mlx_put_image_to_window(e->mlx, e->win, e->img, 0, HEAD_H);
 	put_menu_strings(e);
+	put_color_strings(e);
 }
 
 void	fill_pixel(t_env *e, int color, int x, int y)

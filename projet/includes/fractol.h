@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/15 19:24:48 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/26 13:57:20 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/06 19:27:43 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define CASE_H (WIN_H / 20)
 # define CASE_W (WIN_W / 5)
 # define TEXT_H (CASE_H / 4)
-# define TEXT_W (CASE_W / 5)
+# define TEXT_W (CASE_W / 5) - 10
 
 # define STD 0
 # define RED_MODE 1
@@ -60,13 +60,13 @@
 # define MARS_ORANGE 0xAF3B00
 # define BROWN 0x663300
 
-typedef struct		s_complx
+typedef struct	s_complx
 {
 	double		i;
 	double		r;
-}			t_complx;
+}				t_complx;
 
-typedef struct		s_env
+typedef struct	s_env
 {
 	void		*mlx;
 	void		*win;
@@ -74,24 +74,24 @@ typedef struct		s_env
 	void		*img_head;
 	char		*data;
 	char		*data_head;
-	int		size;
-	int		size_head;
-	int		endian;
-	int		bpp;
-	int		menu;
-	int		color_menu;
-	int		arg;
-	int		iter;
-	int		color;
+	int			size;
+	int			size_head;
+	int			endian;
+	int			bpp;
+	int			menu;
+	int			color_menu;
+	int			arg;
+	int			iter;
+	int			color;
 	float		zoom;
 	double		move_ud;
 	double		move_lr;
-}			t_env;
+}				t_env;
 
 void			start_mlx(t_env *e);
-int			expose_hook(t_env *e);
-int			key_hook(int keycode, t_env *e);
-int			mouse_hook(int button, int x, int y, t_env *e);
+int				expose_hook(t_env *e);
+int				key_hook(int keycode, t_env *e);
+int				mouse_hook(int button, int x, int y, t_env *e);
 void			open_error(t_env *e);
 void			malloc_error(void);
 void			draw_menu(t_env *e);
@@ -105,8 +105,10 @@ void			fill_head_pixel(t_env *e, int color, int x, int y);
 void			erase_image(t_env *e);
 void			put_head_strings(t_env *e);
 void			put_menu_strings(t_env *e);
+void			put_color_strings(t_env *e);
 void			move_key_hook(t_env *e, int keycode);
 void			zoom_key_hook(t_env *e, int keycode);
 void			color_key_hook(t_env *e, int keycode);
+void			iter_key_hook(t_env *e, int keycode);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/15 19:31:37 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/02/25 20:21:26 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/06 19:27:11 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	expose_hook(t_env *e)
 	mlx_put_image_to_window(e->mlx, e->win, e->img_head, 0, 0);
 	put_head_strings(e);
 	put_menu_strings(e);
+	put_color_strings(e);
 	return (0);
 }
 
@@ -28,6 +29,7 @@ int	key_hook(int keycode, t_env *e)
 	move_key_hook(e, keycode);
 	zoom_key_hook(e, keycode);
 	color_key_hook(e, keycode);
+	iter_key_hook(e, keycode);
 	erase_image(e);
 	ft_putnbr(keycode);
 	ft_putchar('\n');
