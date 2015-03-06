@@ -14,7 +14,6 @@
 
 void	draw_all(t_env *e)
 {
-	(void)e;
 	if (e->arg == MANDEL)
 		draw_mandel(e);
 	if (e->arg == JULIA)

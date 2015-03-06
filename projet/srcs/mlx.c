@@ -18,7 +18,6 @@ int	expose_hook(t_env *e)
 	mlx_put_image_to_window(e->mlx, e->win, e->img_head, 0, 0);
 	put_head_strings(e);
 	put_menu_strings(e);
-	mlx_string_put(e->mlx, e->win, 300, 300, PINK, "FUCK IT");
 	return (0);
 }
 

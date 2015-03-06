@@ -20,6 +20,14 @@ void	zoom_key_hook(t_env *e, int keycode)
 		e->zoom += 0.3;
 }
 
+void	iter_key_hook(t_env *e, int keycode)
+{
+	if (keycode == 45 || keycode == 27)
+		e->zoom -= 0.3;
+	if (keycode == 61 || keycode == 24)
+		e->zoom += 0.3;
+}
+
 void	color_key_hook(t_env *e, int keycode)
 {
 	if (keycode == 18)
