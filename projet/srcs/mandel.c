@@ -12,17 +12,6 @@
 
 #include "fractol.h"
 
-void		init_all(t_env *e)
-{
-	e->ju.rc = -0.7;
-	e->ju.ic = 0.27015;
-	e->color = YELLOW;
-	e->iter = 50;
-	e->zoom = 0.5;
-	e->move_ud = 0;
-	e->move_lr = 0;
-}
-
 static int	mandel_color(t_complx *p, t_env *e)
 {
 	t_complx	old;

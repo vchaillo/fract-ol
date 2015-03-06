@@ -32,7 +32,7 @@ void	draw_color_menu(t_env *e)
 	int		y;
 
 	y = -1;
-	while (++y < CASE_H * 5)
+	while (++y < CASE_H * 7)
 	{
 		x = CASE_W;
 		while (++x < CASE_W * 2)

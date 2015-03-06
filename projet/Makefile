@@ -21,6 +21,7 @@ SRCS_NAME = main.c\
 			mandel.c\
 			julia.c\
 			key_hook.c\
+			mouse_hook.c\
 
 SRCS_PATH = ./srcs/
 

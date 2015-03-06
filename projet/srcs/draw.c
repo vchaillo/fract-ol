@@ -12,6 +12,25 @@
 
 #include "fractol.h"
 
+void	init_all(t_env *e)
+{
+	e->ju.rc = -0.7;
+	e->ju.ic = 0.27015;
+	e->iter = 130;
+	e->move_ud = 0;
+	e->move_lr = 0;
+	if (e->arg == JULIA)
+	{
+		e->zoom = 0.8;
+		e->color = BLUE;
+	}
+	else
+	{
+		e->zoom = 0.5;
+		e->color = YELLOW;
+	}
+}
+
 void	draw_all(t_env *e)
 {
 	if (e->arg == MANDEL)

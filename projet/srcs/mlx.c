@@ -53,10 +53,6 @@ int	mouse_hook(int button, int x, int y, t_env *e)
 			e->color_menu = ON;
 	}
 	erase_image(e);
-	ft_putnbr(y);
-	ft_putchar('\n');
-	ft_putnbr(CASE_H);
-	ft_putchar('\n');
 	return (0);
 }
 

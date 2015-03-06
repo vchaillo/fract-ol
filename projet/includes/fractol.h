@@ -118,5 +118,8 @@ void			move_key_hook(t_env *e, int keycode);
 void			zoom_key_hook(t_env *e, int keycode);
 void			color_key_hook(t_env *e, int keycode);
 void			iter_key_hook(t_env *e, int keycode);
+void			color_mouse_hook(t_env *e, int y);
+void			fractal_mouse_hook(t_env *e, int x);
+void			julia_mouse_hook(t_env *e, int x, int y);
 
 #endif

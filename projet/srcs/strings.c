@@ -35,9 +35,9 @@ void	put_menu_strings(t_env *e)
 		mlx_string_put(e->mlx, e->win, (TEXT_W), TEXT_H * 8, ORANGE, \
 				"Zoom -");
 		mlx_string_put(e->mlx, e->win, (TEXT_W), TEXT_H * 11, ORANGE, \
-				"Iter num + ");
+				"Iter >");
 		mlx_string_put(e->mlx, e->win, (TEXT_W), TEXT_H * 14, ORANGE, \
-				"Iter num - ");
+				"Iter <");
 		mlx_string_put(e->mlx, e->win, (TEXT_W), TEXT_H * 17, ORANGE, \
 				"Move array");
 	}
@@ -61,5 +61,11 @@ void	put_color_strings(t_env *e)
 				"ORANGE 6");
 		mlx_string_put(e->mlx, e->win, CASE_W + (TEXT_W), TEXT_H * 23, ORANGE, \
 				"BROWN 7");
+		mlx_string_put(e->mlx, e->win, CASE_W + (TEXT_W), TEXT_H * 26, ORANGE, \
+				"L_BLUE 8");
+		mlx_string_put(e->mlx, e->win, CASE_W + (TEXT_W), TEXT_H * 29, ORANGE, \
+				"D_GREY 9");
+		mlx_string_put(e->mlx, e->win, CASE_W + (TEXT_W), TEXT_H * 32, ORANGE, \
+				"WHITE 0");
 	}
 }
