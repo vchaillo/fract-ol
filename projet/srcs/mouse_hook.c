@@ -49,9 +49,10 @@ void	fractal_mouse_hook(t_env *e, int x)
 	init_all(e);
 }
 
-void	julia_mouse_hook(t_env *e, int x, int y)
+void	zoom_mouse_hook(t_env *e, int button)
 {
-	(void)e;
-	(void)x;
-	(void)y;
+	if (button == 4)
+		e->zoom -= 0.3;
+	else
+		e->zoom += 0.3;
 }

@@ -92,12 +92,15 @@ typedef struct	s_env
 	float		zoom;
 	double		move_ud;
 	double		move_lr;
+	int		julia_x;
+	int		julia_y;
 	t_julia		ju;
 }			t_env;
 
 void			start_mlx(t_env *e);
 int			expose_hook(t_env *e);
 int			key_hook(int keycode, t_env *e);
+int			julia_mouse_hook(int x, int y, t_env *e);
 int			mouse_hook(int button, int x, int y, t_env *e);
 void			open_error(t_env *e);
 void			malloc_error(void);
@@ -121,6 +124,6 @@ void			iter_key_hook(t_env *e, int keycode);
 void			color_mouse_hook(t_env *e, int y);
 void			menu_mouse_hook(t_env *e, int y);
 void			fractal_mouse_hook(t_env *e, int x);
-void			julia_mouse_hook(t_env *e, int x, int y);
+void			zoom_mouse_hook(t_env *e, int button);
 
 #endif

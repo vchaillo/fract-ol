@@ -14,6 +14,8 @@
 
 void	init_all(t_env *e)
 {
+	e->menu = OFF;
+	e->color_menu = OFF;
 	e->ju.rc = -0.7;
 	e->ju.ic = 0.27015;
 	e->iter = 130;

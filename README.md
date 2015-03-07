@@ -3,7 +3,6 @@ fract_ol
 
 Todo list:
 ==========
-- Julia mouse_hook
 - Kosh
 
 A faire avant rendu:

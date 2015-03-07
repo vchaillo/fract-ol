@@ -61,6 +61,28 @@ int	mouse_hook(int button, int x, int y, t_env *e)
 	if (button == 1 && y > CASE_H && x > CASE_W && x < (CASE_W * 2) &&
 		e->color_menu == ON)
 		color_mouse_hook(e, y);
+	if (button == 5 || button == 4)
+		zoom_mouse_hook(e, button);
+		
+	erase_image(e);
+	return (0);
+}
+
+int	julia_mouse_hook(int x, int y, t_env *e)
+{
+	if (x > 0 && x < WIN_W && y > HEAD_H && y < WIN_H && e->arg == JULIA)
+	{
+		if (x > e->julia_x)
+			e->ju.rc += 0.005 / e->zoom;
+		else
+			e->ju.rc -= 0.005 / e->zoom;
+		if (y > e->julia_y)
+			e->ju.ic += 0.005 / e->zoom;
+		else
+			e->ju.ic -= 0.005 / e->zoom;
+		e->julia_x = x;
+		e->julia_y = y;
+	}
 	erase_image(e);
 	return (0);
 }
@@ -83,5 +105,6 @@ void	start_mlx(t_env *e)
 	mlx_expose_hook(e->win, expose_hook, e);
 	mlx_mouse_hook(e->win, mouse_hook, e);
 	mlx_hook(e->win, 3, 3, key_hook, e);
+	mlx_hook(e->win, 6, 6, julia_mouse_hook, e);
 	mlx_loop(e->mlx);
 }
