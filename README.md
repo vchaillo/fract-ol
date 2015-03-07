@@ -3,11 +3,8 @@ fract_ol
 
 Todo list:
 ==========
-- Mandelbrot
-- Julia avec mouse
+- Julia mouse_hook
 - Kosh
-- Deplacements
-- Zoom
 
 A faire avant rendu:
 ====================
