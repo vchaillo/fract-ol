@@ -22,8 +22,8 @@ int		main(int argc, char **argv)
 			e.arg = MANDEL;
 		else if (ft_strcmp(argv[1], "julia") == 0)
 			e.arg = JULIA;
-		else if (ft_strcmp(argv[1], "other") == 0)
-			e.arg = OTHER;
+		else if (ft_strcmp(argv[1], "kosh") == 0)
+			e.arg = KOSH;
 		else
 		{
 			ft_putendl("Usage : ./fractol [mandel] [julia] [other]");

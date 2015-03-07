@@ -26,6 +26,8 @@ int	key_hook(int keycode, t_env *e)
 {
 	if (keycode == 65307 || keycode == 53)
 		exit (0);
+	if (keycode == 15)
+		init_all(e);
 	move_key_hook(e, keycode);
 	zoom_key_hook(e, keycode);
 	color_key_hook(e, keycode);
@@ -38,7 +40,7 @@ int	key_hook(int keycode, t_env *e)
 
 int	mouse_hook(int button, int x, int y, t_env *e)
 {
-	if (button == 1 && y < CASE_H && x > 0 && x < CASE_W)
+	if (button == 1 && y < CASE_H && x < CASE_W)
 	{
 		if (e->menu == ON)
 			e->menu = OFF;
@@ -52,6 +54,13 @@ int	mouse_hook(int button, int x, int y, t_env *e)
 		else
 			e->color_menu = ON;
 	}
+	if (button == 1 && y > CASE_H && x < CASE_W && e->menu == ON)
+		menu_mouse_hook(e, y);
+	if (button == 1 && y < CASE_H && x > (CASE_W * 2))
+		fractal_mouse_hook(e, x);
+	if (button == 1 && y > CASE_H && x > CASE_W && x < (CASE_W * 2) &&
+		e->color_menu == ON)
+		color_mouse_hook(e, y);
 	erase_image(e);
 	return (0);
 }

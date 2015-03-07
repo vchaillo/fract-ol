@@ -38,7 +38,7 @@
 
 # define MANDEL 1
 # define JULIA 2
-# define OTHER 3
+# define KOSH 3
 
 # define OFF 0
 # define ON 1
@@ -80,25 +80,25 @@ typedef struct	s_env
 	void		*img_head;
 	char		*data;
 	char		*data_head;
-	int			size;
-	int			size_head;
-	int			endian;
-	int			bpp;
-	int			menu;
-	int			color_menu;
-	int			arg;
-	int			iter;
-	int			color;
+	int		size;
+	int		size_head;
+	int		endian;
+	int		bpp;
+	int		menu;
+	int		color_menu;
+	int		arg;
+	int		iter;
+	int		color;
 	float		zoom;
 	double		move_ud;
 	double		move_lr;
 	t_julia		ju;
-}				t_env;
+}			t_env;
 
 void			start_mlx(t_env *e);
-int				expose_hook(t_env *e);
-int				key_hook(int keycode, t_env *e);
-int				mouse_hook(int button, int x, int y, t_env *e);
+int			expose_hook(t_env *e);
+int			key_hook(int keycode, t_env *e);
+int			mouse_hook(int button, int x, int y, t_env *e);
 void			open_error(t_env *e);
 void			malloc_error(void);
 void			draw_menu(t_env *e);
@@ -119,6 +119,7 @@ void			zoom_key_hook(t_env *e, int keycode);
 void			color_key_hook(t_env *e, int keycode);
 void			iter_key_hook(t_env *e, int keycode);
 void			color_mouse_hook(t_env *e, int y);
+void			menu_mouse_hook(t_env *e, int y);
 void			fractal_mouse_hook(t_env *e, int x);
 void			julia_mouse_hook(t_env *e, int x, int y);
 

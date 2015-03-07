@@ -37,7 +37,7 @@ void	draw_all(t_env *e)
 		draw_mandel(e);
 	if (e->arg == JULIA)
 		draw_julia(e);
-	if (e->arg == OTHER)
+	if (e->arg == KOSH)
 		draw_mandel(e);
 }
 
