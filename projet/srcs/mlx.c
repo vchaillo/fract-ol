@@ -40,14 +40,14 @@ int	key_hook(int keycode, t_env *e)
 
 int	mouse_hook(int button, int x, int y, t_env *e)
 {
-	if (button == 1 && y < CASE_H && x < CASE_W)
+	if (button == 1 && y > 0 && y < CASE_H && x < CASE_W)
 	{
 		if (e->menu == ON)
 			e->menu = OFF;
 		else
 			e->menu = ON;
 	}
-	if (button == 1 && y < CASE_H && x > CASE_W && x < (CASE_W * 2))
+	if (button == 1 && y > 0 && y < CASE_H && x > CASE_W && x < (CASE_W * 2))
 	{
 		if (e->color_menu == ON)
 			e->color_menu = OFF;
