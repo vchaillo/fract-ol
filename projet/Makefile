@@ -1,76 +1,68 @@
-# **************************************************************************** #
+#******************************************************************************#
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+         #
+#    By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/01/27 19:25:58 by vchaillo          #+#    #+#              #
-#    Updated: 2015/03/06 20:19:31 by vchaillo         ###   ########.fr        #
+#    Created: 2015/02/20 18:44:07 by jbarbie           #+#    #+#              #
+#    Updated: 2015/03/01 22:35:35 by vchaillo         ###   ########.fr        #
 #                                                                              #
-# **************************************************************************** #
+#******************************************************************************#
 
-NAME = fractol
+NAME 	=	fractol
 
-SRCS_NAME = main.c\
-		   	mlx.c\
-			draw.c\
-			error_msg.c\
-			menus.c\
-			strings.c\
-			mandel.c\
-			julia.c\
-			other.c\
-			key_hook.c\
-			mouse_hook.c\
+CC	=	gcc
 
-SRCS_PATH = ./srcs/
+CFLAGS	+=	-Wall -Wextra -Werror
 
-OBJS_NAME = $(SRCS_NAME:.c=.o)
+SRC	=	main.c \
+		mlx.c\
+		draw.c \
+		error_msg.c \
+		menus.c\
+		strings.c\
+		mandel.c\
+		julia.c\
+		other.c\
+		key_hook.c\
+		mouse_hook.c\
 
-OBJS_PATH = ./objs/
+LIBMLX 	= 	-Lminilibx/ -lmlx -framework OpenGL -framework AppKit
 
-SRCS = $(addprefix $(SRCS_PATH),$(SRCS_NAME))
+LIBFT	=	-Llibft/ -lft
 
-OBJS = $(addprefix $(OBJS_PATH),$(OBJS_NAME))
+INC	=	-I inc/ -I minilibx/ -I libft/includes/
 
-FLAGS = -Wall -Wextra -Werror
+OBJ	=	$(patsubst %.c, obj/%.o, $(SRC))
 
-LIBFT_H = -I libft/includes/
+RM	=	rm -Rf
 
-LIBFT = -Llibft -lft
+all:   $(NAME)
 
-MLX_H = -I minilibx/
 
-LIB_MLX = -Lminilibx/ -lmlx -framework OpenGL -framework AppKit
+$(NAME): obj $(OBJ)
+		@$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIBMLX) $(LIBFT)
 
-HEADERS = -I includes/
+obj/%.o: src/%.c
+		@gcc $(CFLAGS) $(INC) -o $@ -c $<
+		@echo "[\033[1;32m√\033[m]" $<
 
-all: $(NAME)
-
-$(NAME):
-	@make -C libft/ fclean
-	@make -C libft/
-	@make -C minilibx/ clean
-	@make -C minilibx/
-	@gcc -g $(FLAGS) $(LIBFT_H) $(MLX_H) $(HEADERS) -c $(SRCS)
-	@mkdir $(OBJS_PATH)
-	@mv $(OBJS_NAME) $(OBJS_PATH)
-	@gcc -o $(NAME) $(OBJS) $(LIBFT) $(LIB_MLX)
-	@echo "\033[32mfractol was created\033[0m"
-
-norm:
-	@echo "\033[32mnorminette...\033[0m"
-	@norminette **/*.[ch]
+obj:
+		@mkdir -p obj
 
 clean:
-	@rm -rf $(OBJS_PATH)
-	@echo "\033[31mSuppression des .o\033[0m"
+		@echo "\033[33;31mCleaning files .o ...\033[0m"
+		@$(RM) obj/
 
-fclean: clean
-	@rm -rf $(NAME)
-	@echo "\033[31mSuppression de fdf\033[0m"
+fclean:	clean
+		@echo "\033[33;31mCleaning executables...\033[0m"
+		@$(RM) $(NAME)
+
+norm:
+		@echo "\033[32mnorminette...\033[0m"
+		@norminette **/*.[ch]
 
 re: fclean all
 
-.PHONY: all norm clean fclean re
+.PHONY: all clean fclean norm re
