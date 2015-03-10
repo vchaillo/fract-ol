@@ -20,6 +20,8 @@ void	init_all(t_env *e)
 	e->ju.ic = 0.27015;
 	e->move_ud = 0;
 	e->move_lr = 0;
+	e->x = 0;
+	e->y = 0;
 	if (e->arg == JULIA)
 	{
 		e->zoom = 0.8;

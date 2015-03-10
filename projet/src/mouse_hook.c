@@ -49,10 +49,20 @@ void	fractal_mouse_hook(t_env *e, int x)
 	init_all(e);
 }
 
-void	zoom_mouse_hook(t_env *e, int button)
+void	zoom_mouse_hook(t_env *e, int button, int x, int y)
 {
+	(void)x;
+	(void)y;
 	if (button == 4)
+	{
 		e->zoom -= 0.3;
+		//e->move_lr += x / 100;//e->x = x / 100;
+		//e->move_ud += y / 100;//e->y = y / 100;
+	}
 	else
+	{
 		e->zoom += 0.3;
+		//e->move_lr -= x / 100;//e->x = -x / 100;
+		//e->move_ud -= y / 100;//e->y = -y / 100;
+	}
 }

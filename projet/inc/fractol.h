@@ -95,6 +95,8 @@ typedef struct	s_env
 	double		move_lr;
 	int		julia_x;
 	int		julia_y;
+	int		x;
+	int		y;
 	t_julia		ju;
 }			t_env;
 
@@ -126,6 +128,6 @@ void			iter_key_hook(t_env *e, int keycode);
 void			color_mouse_hook(t_env *e, int y);
 void			menu_mouse_hook(t_env *e, int y);
 void			fractal_mouse_hook(t_env *e, int x);
-void			zoom_mouse_hook(t_env *e, int button);
+void			zoom_mouse_hook(t_env *e, int button, int x, int y);
 
 #endif

@@ -62,7 +62,7 @@ int	mouse_hook(int button, int x, int y, t_env *e)
 		e->color_menu == ON)
 		color_mouse_hook(e, y);
 	if (button == 5 || button == 4)
-		zoom_mouse_hook(e, button);
+		zoom_mouse_hook(e, button, x, y);
 		
 	erase_image(e);
 	return (0);
