@@ -18,18 +18,25 @@ void	init_all(t_env *e)
 	e->color_menu = OFF;
 	e->ju.rc = -0.7;
 	e->ju.ic = 0.27015;
-	e->iter = 130;
 	e->move_ud = 0;
 	e->move_lr = 0;
 	if (e->arg == JULIA)
 	{
 		e->zoom = 0.8;
-		e->color = BLUE;
+		e->color = YELLOW;
+		e->iter = 130;
 	}
-	else
+	else if (e->arg == MANDEL)
 	{
 		e->zoom = 0.5;
-		e->color = YELLOW;
+		e->color = BLUE;
+		e->iter = 50;
+	}
+	else if (e->arg == OTHER)
+	{
+		e->zoom = 0.2;
+		e->color = RED;
+		e->iter = 50;
 	}
 }
 
@@ -39,8 +46,8 @@ void	draw_all(t_env *e)
 		draw_mandel(e);
 	if (e->arg == JULIA)
 		draw_julia(e);
-	if (e->arg == KOSH)
-		draw_mandel(e);
+	if (e->arg == OTHER)
+		draw_other(e);
 }
 
 void	erase_image(t_env *e)

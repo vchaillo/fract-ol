@@ -52,7 +52,7 @@ void		draw_mandel(t_env *e)
 		{
 			p.r = 1 * (x - WIN_W / 2) / (0.5 * e->zoom * WIN_W) + e->move_lr;
 			p.i = (y - WIN_W / 2) / (0.5 * e->zoom * WIN_W) + e->move_ud;
-			color = (e->color * (mandel_color(&p, e) * 1000));
+			color = (e->color * (mandel_color(&p, e) * 12));
 			fill_pixel(e, color, x, y);
 			y++;
 		}

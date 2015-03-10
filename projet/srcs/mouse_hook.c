@@ -45,7 +45,7 @@ void	fractal_mouse_hook(t_env *e, int x)
 	else if (x < (CASE_W * 4))
 		e->arg = JULIA;
 	else
-		e->arg = KOSH;
+		e->arg = OTHER;
 	init_all(e);
 }
 

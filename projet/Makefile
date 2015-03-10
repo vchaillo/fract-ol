@@ -20,6 +20,7 @@ SRCS_NAME = main.c\
 			strings.c\
 			mandel.c\
 			julia.c\
+			other.c\
 			key_hook.c\
 			mouse_hook.c\
 

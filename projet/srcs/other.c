@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   julia.c                                            :+:      :+:    :+:   */
+/*   other.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-static int	julia_color(t_complx *new, t_env *e)
+static int	other_color(t_complx *new, t_env *e)
 {
 	t_complx	old;
 	int			i;
@@ -23,7 +23,7 @@ static int	julia_color(t_complx *new, t_env *e)
 		old.r = new->r;
 		old.i = new->i;
 		new->r = old.r * old.r - old.i * old.i + e->ju.rc;
-		new->i = 2 * old.r * old.i + e->ju.ic;
+		new->i = sin(2 * old.r * old.i + e->ju.ic);
 		if ((new->r * new->r + new->i * new->i) > 4)
 			break ;
 		i++;
@@ -31,7 +31,7 @@ static int	julia_color(t_complx *new, t_env *e)
 	return (i);
 }
 
-void		draw_julia(t_env *e)
+void		draw_other(t_env *e)
 {
 	t_complx	p;
 	int			color;
@@ -46,7 +46,7 @@ void		draw_julia(t_env *e)
 		{
 			p.r = 1.5 * (x - WIN_W / 2) / (0.5 * e->zoom * WIN_W) + e->move_lr;
 			p.i = (y - WIN_W / 2) / (0.5 * e->zoom * WIN_W) + e->move_ud;
-			color = (e->color * (julia_color(&p, e) * 500));
+			color = (e->color * (other_color(&p, e) * 10));
 			fill_pixel(e, color, x, y);
 			y++;
 		}

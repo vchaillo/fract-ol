@@ -19,6 +19,7 @@
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/stat.h>
+# include <math.h>
 # include "../libft/includes/libft.h"
 
 # define WIN_W 600
@@ -38,7 +39,7 @@
 
 # define MANDEL 1
 # define JULIA 2
-# define KOSH 3
+# define OTHER 3
 
 # define OFF 0
 # define ON 1
@@ -110,6 +111,7 @@ void			draw_header(t_env *e);
 void			draw_all(t_env *e);
 void			draw_mandel(t_env *e);
 void			draw_julia(t_env *e);
+void			draw_other(t_env *e);
 void			init_all(t_env *e);
 void			fill_pixel(t_env *e, int color, int x, int y);
 void			fill_head_pixel(t_env *e, int color, int x, int y);
