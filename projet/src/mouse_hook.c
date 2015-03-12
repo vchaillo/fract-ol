@@ -55,14 +55,14 @@ void	zoom_mouse_hook(t_env *e, int button, int x, int y)
 	(void)y;
 	if (button == 4)
 	{
-		e->zoom -= 0.3;
-		//e->move_lr += x / 100;//e->x = x / 100;
-		//e->move_ud += y / 100;//e->y = y / 100;
+		e->zoom -= 0.1;
+		//e->move_lr += (x - WIN_W) * e->zoom / 100;
+		//e->move_ud += (y - IMG_H) * e->zoom / 100;
 	}
-	else
+	else if (button == 5)
 	{
-		e->zoom += 0.3;
-		//e->move_lr -= x / 100;//e->x = -x / 100;
-		//e->move_ud -= y / 100;//e->y = -y / 100;
+		e->zoom += 0.1;
+		//e->move_lr += (x - WIN_H) * e->zoom / 100;
+		//e->move_ud += (y - IMG_H) * e->zoom / 100;
 	}
 }

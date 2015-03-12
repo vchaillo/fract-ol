@@ -25,7 +25,7 @@
 # define WIN_W 600
 # define WIN_H 635
 # define HEAD_H (WIN_H / 20)
-# define IMG_H (WIN_H - HEAD_H)
+# define IMG_H (WIN_H - HEAD_H - 4)
 
 # define CASE_H (WIN_H / 20)
 # define CASE_W (WIN_W / 5)
