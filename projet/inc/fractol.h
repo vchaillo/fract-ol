@@ -20,7 +20,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <math.h>
-# include "../libft/includes/libft.h"
+# include "libft.h"
 
 # define WIN_W 600
 # define WIN_H 635
