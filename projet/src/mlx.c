@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/15 19:31:37 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/06 19:27:11 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/20 03:20:29 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ int	mouse_hook(int button, int x, int y, t_env *e)
 		else
 			e->color_menu = ON;
 	}
-	if (button == 1 && y > CASE_H && x < CASE_W && e->menu == ON)
+	if (button == 1 && y > 0 && y > CASE_H && x < CASE_W && e->menu == ON)
 		menu_mouse_hook(e, y);
-	if (button == 1 && y < CASE_H && x > (CASE_W * 2))
+	if (button == 1 && y > 0 && y < CASE_H && x > (CASE_W * 2))
 		fractal_mouse_hook(e, x);
 	if (button == 1 && y > CASE_H && x > CASE_W && x < (CASE_W * 2) &&
 		e->color_menu == ON)
