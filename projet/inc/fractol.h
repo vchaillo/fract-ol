@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/15 19:24:48 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/22 02:22:02 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/22 06:21:19 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,6 @@ void			iter_key_hook(t_env *e, int keycode);
 void			color_mouse_hook(t_env *e, int y);
 void			menu_mouse_hook(t_env *e, int y);
 void			fractal_mouse_hook(t_env *e, int x);
-void			zoom_mouse_hook(t_env *e, int button, int x, int y);
+void			zoom_mouse_hook(t_env *e, int button);
 
 #endif

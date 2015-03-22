@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/22 01:46:15 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/22 03:12:21 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/22 06:23:22 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 void	move_key_hook(t_env *e, int keycode)
 {
 	if (keycode == 65361 || keycode == 123)
-		e->move_lr -= 0.02;
+		e->move_lr -= 0.02 / e->zoom;
 	if (keycode == 65363 || keycode == 124)
-		e->move_lr += 0.02;
+		e->move_lr += 0.02 / e->zoom;
 	if (keycode == 65362 || keycode == 126)
-		e->move_ud -= 0.02;
+		e->move_ud -= 0.02 / e->zoom;
 	if (keycode == 65364 || keycode == 125)
-		e->move_ud += 0.02;
+		e->move_ud += 0.02 / e->zoom;
 }
 
 void	zoom_key_hook(t_env *e, int keycode)
 {
 	if (keycode == 45 || keycode == 27)
-		e->zoom *= 0.5;
+		e->zoom *= 0.9;
 	if (keycode == 61 || keycode == 24)
-		e->zoom /= 0.5;
+		e->zoom /= 0.9;
 }
 
 void	iter_key_hook(t_env *e, int keycode)
