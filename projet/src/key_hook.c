@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key_hook.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/03/22 01:46:15 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/03/22 02:21:04 by vchaillo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	move_key_hook(t_env *e, int keycode)
@@ -15,9 +27,9 @@ void	move_key_hook(t_env *e, int keycode)
 void	zoom_key_hook(t_env *e, int keycode)
 {
 	if (keycode == 45 || keycode == 27)
-		e->zoom -= 0.3;
+		e->zoom *= 0.5;
 	if (keycode == 61 || keycode == 24)
-		e->zoom += 0.3;
+		e->zoom /= 0.5;
 }
 
 void	iter_key_hook(t_env *e, int keycode)

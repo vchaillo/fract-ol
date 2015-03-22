@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/17 02:20:44 by valentin          #+#    #+#             */
-/*   Updated: 2015/03/06 19:30:53 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/22 01:45:11 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	init_all(t_env *e)
 {
-	e->menu = OFF;
-	e->color_menu = OFF;
 	e->ju.rc = -0.7;
 	e->ju.ic = 0.27015;
 	e->move_ud = 0;

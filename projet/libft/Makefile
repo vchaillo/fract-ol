@@ -6,7 +6,7 @@
 #    By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 15:04:37 by vchaillo          #+#    #+#              #
-#    Updated: 2015/01/28 14:54:42 by vchaillo         ###   ########.fr        #
+#    Updated: 2015/03/22 01:39:50 by vchaillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -62,11 +62,11 @@ rm:
 
 clean:
 	@rm -rf $(OBJS_PATH)
-	@echo "\033[31mSuppression des .o de la libft\033[0m"
+	@echo "\033[31;1mSuppression des .o de la libft\033[0m"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\033[31mSuppression libft.a\033[0m"
+	@echo "\033[31;1mSuppression libft.a\033[0m"
 
 re: fclean all
 

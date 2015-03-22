@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/25 15:49:07 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/20 03:18:04 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/22 02:20:46 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	mandel_color(t_complx *p, t_env *e)
 {
 	t_complx	old;
 	t_complx	new;
-	int		i;
+	int			i;
 
 	i = 0;
 	new.r = 0;
@@ -28,7 +28,7 @@ static int	mandel_color(t_complx *p, t_env *e)
 		new.r = old.r * old.r - old.i * old.i + p->r;
 		new.i = 2 * old.r * old.i + p->i;
 		if (new.r * new.r + new.i * new.i > 4)
-			break;
+			break ;
 		i++;
 	}
 	if (i == e->iter)
@@ -40,9 +40,9 @@ static int	mandel_color(t_complx *p, t_env *e)
 void		draw_mandel(t_env *e)
 {
 	t_complx	p;
-	int		color;
-	int		x;
-	int		y;
+	int			color;
+	int			x;
+	int			y;
 
 	x = 0;
 	while (x < WIN_W)

@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/15 19:24:48 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/06 20:18:32 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/22 02:22:02 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define CASE_H (WIN_H / 20)
 # define CASE_W (WIN_W / 5)
 # define TEXT_H (CASE_H / 4)
-# define TEXT_W (CASE_W / 5) - 10
+# define TEXT_W ((CASE_W / 5) - 10)
 
 # define STD 0
 # define RED_MODE 1
@@ -81,30 +81,30 @@ typedef struct	s_env
 	void		*img_head;
 	char		*data;
 	char		*data_head;
-	int		size;
-	int		size_head;
-	int		endian;
-	int		bpp;
-	int		menu;
-	int		color_menu;
-	int		arg;
-	int		iter;
-	int		color;
+	int			size;
+	int			size_head;
+	int			endian;
+	int			bpp;
+	int			menu;
+	int			color_menu;
+	int			arg;
+	int			iter;
+	int			color;
 	float		zoom;
 	double		move_ud;
 	double		move_lr;
-	int		julia_x;
-	int		julia_y;
-	int		x;
-	int		y;
+	int			julia_x;
+	int			julia_y;
+	int			x;
+	int			y;
 	t_julia		ju;
-}			t_env;
+}				t_env;
 
 void			start_mlx(t_env *e);
-int			expose_hook(t_env *e);
-int			key_hook(int keycode, t_env *e);
-int			julia_mouse_hook(int x, int y, t_env *e);
-int			mouse_hook(int button, int x, int y, t_env *e);
+int				expose_hook(t_env *e);
+int				key_hook(int keycode, t_env *e);
+int				julia_mouse_hook(int x, int y, t_env *e);
+int				mouse_hook(int button, int x, int y, t_env *e);
 void			open_error(t_env *e);
 void			malloc_error(void);
 void			draw_menu(t_env *e);

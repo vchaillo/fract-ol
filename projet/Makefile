@@ -6,7 +6,7 @@
 #    By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/20 18:44:07 by jbarbie           #+#    #+#              #
-#    Updated: 2015/03/20 03:16:04 by vchaillo         ###   ########.fr        #
+#    Updated: 2015/03/22 01:43:04 by vchaillo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -52,11 +52,11 @@ obj:
 		@mkdir -p obj
 
 clean:
-		@echo "\033[33;31mCleaning files .o ...\033[0m"
+		@echo "\033[31;1mCleaning files .o ...\033[0m"
 		@$(RM) obj/
 
 fclean:	clean
-		@echo "\033[33;31mCleaning executables...\033[0m"
+		@echo "\033[31;1mCleaning executables...\033[0m"
 		@$(RM) $(NAME)
 
 norm:
