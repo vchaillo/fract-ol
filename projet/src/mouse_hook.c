@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/22 01:58:13 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/22 06:21:47 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/22 06:30:45 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	menu_mouse_hook(t_env *e, int y)
 	else if (y < (TEXT_H) * 14)
 		e->iter += 10;
 	else if (y < (TEXT_H) * 17)
-		e->color -= 10;
+		e->iter -= 10;
 	else if (y < (TEXT_H) * 20)
 		init_all(e);
 }

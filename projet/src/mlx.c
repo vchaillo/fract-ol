@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/15 19:31:37 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/22 04:31:17 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/22 06:28:31 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		mouse_hook(int button, int x, int y, t_env *e)
 		e->color_menu == ON)
 		color_mouse_hook(e, y);
 	if (button == 5 || button == 4)
-		zoom_mouse_hook(e, button, x, y);
+		zoom_mouse_hook(e, button);
 	erase_image(e);
 	return (0);
 }
