@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/22 01:58:13 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/22 02:16:58 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/22 03:40:07 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,40 @@ void	fractal_mouse_hook(t_env *e, int x)
 
 void	zoom_mouse_hook(t_env *e, int button, int x, int y)
 {
-	(void)x;
-	(void)y;
+	float		xx;
+	float		yy;
+
+	xx = (x - WIN_W);
+	xx = 314;
+	yy = (y - IMG_H - HEAD_H);
+	xx /= 100;
+	yy /= 100;
+	ft_putstr("valeur de move_lr et move_ud avant calcul : ");
+	ft_putnbr(e->move_lr);
+	ft_putchar(' ');
+	ft_putnbr(e->move_ud);
+	ft_putchar('\n');
+	ft_putstr("valeur de xx et yy : ");
+	ft_putnbr(xx);
+	ft_putchar(' ');
+	ft_putnbr(yy);
+	ft_putchar('\n');
 	if (button == 4)
 	{
 		e->zoom *= 0.5;
-		//e->move_lr += (x - WIN_W) * e->zoom / 100;
-		//e->move_ud += (y - IMG_H) * e->zoom / 100;
+		e->move_lr += xx * 2;
+		e->move_ud += yy * 2;
 	}
 	else if (button == 5)
 	{
 		e->zoom /= 0.5;
-		//e->move_lr += (x - WIN_H) * e->zoom / 100;
-		//e->move_ud += (y - IMG_H) * e->zoom / 100;
+		e->move_lr += xx / 2;
+		e->move_ud += yy / 2;
 	}
+	ft_putstr("valeur de move_lr et move_ud apres calcul : ");
+	ft_putnbr(e->move_lr);
+	ft_putchar(' ');
+	ft_putnbr(e->move_ud);
+	ft_putchar('\n');
+	ft_putchar('\n');
 }
