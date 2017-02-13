@@ -22,14 +22,14 @@
 # include <math.h>
 # include "libft.h"
 
-# define WIN_W 600
-# define WIN_H 635
+# define WIN_W 1080
+# define WIN_H 720
 # define HEAD_H (WIN_H / 20)
 # define IMG_H (WIN_H - HEAD_H - 4)
 
 # define CASE_H (WIN_H / 20)
 # define CASE_W (WIN_W / 5)
-# define TEXT_H (CASE_H / 4)
+# define TEXT_H (CASE_H / 2)
 # define TEXT_W ((CASE_W / 5) - 10)
 
 # define STD 0
