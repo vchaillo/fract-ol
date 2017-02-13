@@ -23,5 +23,8 @@ Découvrez la programmation 2D et l'univers psychédelique des fractales grâce 
 * Linux : X11
 
 =============
+<img src="https://raw.githubusercontent.com/vchaillo/fract_ol/master/screenshots/Screenshot_20170213_073504.png"/>
+<img src="https://raw.githubusercontent.com/vchaillo/fract_ol/master/screenshots/Screenshot_20170213_073531.png"/>
+=============
 Project of school 42
 =======
