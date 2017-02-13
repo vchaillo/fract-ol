@@ -1,7 +1,7 @@
 fract_ol
 ====
 
-<img src="https://raw.githubusercontent.com/vchaillo/rtv1/master/doc/screenshots/Screenshot_20161223_040938.png"/>
+<img src="https://raw.githubusercontent.com/vchaillo/fract_ol/blob/master/screenshots/Screenshot_20170213_073348.png"/>
 * [Subject] (https://github.com/vchaillo/fract_ol/blob/master/fract_ol.pdf)
 
 =============
